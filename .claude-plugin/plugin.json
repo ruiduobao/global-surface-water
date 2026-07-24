@@ -1,0 +1,9 @@
+{
+  "name": "global-surface-water",
+  "description": "GIS skill for global-surface-water",
+  "version": "0.1.0",
+  "author": "ruiduobao",
+  "skills": [
+    "global-surface-water"
+  ]
+}
