@@ -1,15 +1,13 @@
 ---
-name: global-surface-water
-display_name: JRC 全球地表水下载
-version: 0.1.0
-author: ruiduobao
-license: MIT-0
-description: |
-  Download JRC Global Surface Water data layers including occurrence, change, seasonality,
+description: 'Download JRC Global Surface Water data layers including occurrence,
+  change, seasonality,
+
   recurrence, transition, and extent. Data derived from 3+ years of Landsat imagery
+
   (1984-2024) at 30m resolution. Supports bbox clipping and GeoTIFF output.
-runtime: python>=3.8
-tags: [gis, remote-sensing, water, surface-water, jrc, landsat, gee]
+
+  '
+name: global-surface-water
 ---
 
 # JRC Global Surface Water Download
@@ -67,28 +65,28 @@ occurrence = dataset.select('occurrence')
 
 ```bash
 # Download water occurrence for a region
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer occurrence \
   --bbox 116.0 39.5 116.8 40.2 \
   --output ./water/beijing_occurrence.tif
 
 # Download seasonality layer
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer seasonality \
   --bbox 73 18 135 54 \
   --output ./water/china_seasonality.tif
 
 # Download all layers for a small area
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer all \
   --bbox 116.3 39.8 116.5 40.0 \
   --output ./water/beijing_all/
 
 # List available layers
-python scripts/global_surface_water.py list-layers
+python scripts\global_surface_water.py list-layers
 
 # Show dataset info
-python scripts/global_surface_water.py info
+python scripts\global_surface_water.py info
 ```
 
 ## Parameters
@@ -213,7 +211,7 @@ pip install -r scripts/requirements.txt
 for tile in "40N_110E" "40N_120E" "30N_110E" "30N_120E"; do
   lat=$(echo $tile | grep -oP '^\d+')
   lon=$(echo $tile | grep -oP '_\K\d+')
-  python scripts/global_surface_water.py download     --layer occurrence --tile $tile     --output water_${tile}.tif
+  python scripts\global_surface_water.py download     --layer occurrence --tile $tile     --output water_${tile}.tif
 done
 ```
 
@@ -234,7 +232,7 @@ jobs:
           python-version: '3.11'
       - run: pip install requests
       - run: |
-          python scripts/global_surface_water.py download \
+          python scripts\global_surface_water.py download \
             --layer occurrence --tile 40N_110E \
             --output data/water_occ_40N_110E.tif
 ```
@@ -307,28 +305,28 @@ occurrence = dataset.select('occurrence')
 
 ```bash
 # 下载北京区域水体出现频率
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer occurrence \
   --bbox 116.0 39.5 116.8 40.2 \
   --output ./water/beijing_occurrence.tif
 
 # 下载中国区域季节性图层
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer seasonality \
   --bbox 73 18 135 54 \
   --output ./water/china_seasonality.tif
 
 # 下载小区域所有图层
-python scripts/global_surface_water.py download \
+python scripts\global_surface_water.py download \
   --layer all \
   --bbox 116.3 39.8 116.5 40.0 \
   --output ./water/beijing_all/
 
 # 列出可用图层
-python scripts/global_surface_water.py list-layers
+python scripts\global_surface_water.py list-layers
 
 # 查看数据集信息
-python scripts/global_surface_water.py info
+python scripts\global_surface_water.py info
 ```
 
 ### 数据分块
