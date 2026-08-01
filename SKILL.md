@@ -1,6 +1,6 @@
 ---
 name: global-surface-water
-description: 'Download JRC Global Surface Water data layers including occurrence, description: 'Download JRC Global Surface Water data layers including occurrence, change, seasonality,  recurrence, transition, and extent. Data derived from 3+ years of Landsat imagery  (1984-2024) at 30m resolution. Supports bbox clipping and GeoTIFF output.  '
+description: 'Download JRC Global Surface Water data layers including occurrence, change, seasonality,  recurrence, transition, and extent. Data derived from 3+ years of Landsat imagery  (1984-2024) at 30m resolution. Supports bbox clipping and GeoTIFF output.  '
 ---
 
 # JRC Global Surface Water Download
